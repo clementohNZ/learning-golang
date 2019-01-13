@@ -19,3 +19,7 @@ and running `go run <path to main.go>` or compiling first using `go build <path 
 If you are building the binary using `go build` you will need to run the generated executable
 manually. It should be located in the same folder as your `main.go` file, but if it's not there
 check your `GOROOT/bin` folder. 
+
+### Tips
+Clone this repo and view locally in a text editor or IDE instead of browsing through github so 
+you don't need to navigate in and out of many different pages.
