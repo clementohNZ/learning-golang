@@ -16,4 +16,6 @@ live.
 ## How to use
 Each folder will contain a `main.go` file. You can run this file using the go cli
 and running `go run <path to main.go>` or compiling first using `go build <path to main.go>`.
-
+If you are building the binary using `go build` you will need to run the generated executable
+manually. It should be located in the same folder as your `main.go` file, but if it's not there
+check your `GOROOT/bin` folder. 
