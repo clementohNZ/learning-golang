@@ -49,7 +49,7 @@ func main() {
 	Unlike JavaScript you don't have to put break after each case because
 	fallthrough is disabled by default
 	 */
-	 fmt.Println("-------------------")
+	fmt.Println("-------------------")
 	const testString = "John"
 	switch testString {
 	case "":
@@ -64,4 +64,14 @@ func main() {
 	default:
 		fmt.Println("this is the default")
 	}
+
+	/*
+	Conditional Logic Operators
+	Same with other languages
+	 */
+	fmt.Println(true && true)
+	fmt.Println(true && false)
+	fmt.Println(true || true)
+	fmt.Println(true || false)
+	fmt.Println(!true)
 }
