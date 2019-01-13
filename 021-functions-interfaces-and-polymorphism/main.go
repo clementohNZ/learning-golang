@@ -4,7 +4,7 @@ import "fmt"
 
 type person struct {
 	first string
-	last string
+	last  string
 }
 
 type secretAgent struct {
@@ -12,11 +12,11 @@ type secretAgent struct {
 	ltk bool
 }
 
-func (s secretAgent) speak()  {
+func (s secretAgent) speak() {
 	fmt.Println("I am", s.first, s.last, "- the secret agent speak")
 }
 
-func (p person) speak()  {
+func (p person) speak() {
 	fmt.Println("I am", p.first, p.last, "- the person speak")
 }
 
@@ -33,8 +33,15 @@ type human interface {
 	speak()
 }
 
-func bar(_ human) {
+func bar(h human) {
 	fmt.Println("I called human")
+
+	switch h.(type) {
+	case person:
+		fmt.Println("I was passed into bar", h.(person))
+	case secretAgent:
+		fmt.Println("I was passed into bar", h.(secretAgent).first)
+	}
 }
 
 /*
@@ -53,14 +60,14 @@ func main() {
 	sa1 := secretAgent{
 		person: person{
 			first: "James",
-			last: "Bond",
+			last:  "Bond",
 		},
 		ltk: true,
 	}
 
 	p1 := person{
 		first: "Dr.",
-		last: "Yes",
+		last:  "Yes",
 	}
 
 	sa1.speak()
