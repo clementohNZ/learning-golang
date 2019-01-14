@@ -6,7 +6,7 @@ import (
 )
 
 /*
-Use: go get "golang.org/x/crypto/bcrypt"
+Use: go get golang.org/x/crypto/bcrypt
 to download the bcrypt package
  */
 func main() {
