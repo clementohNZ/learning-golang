@@ -13,7 +13,9 @@ func main() {
 	going.
 
 	If I added another thing to the channel, that would block
-	code execution
+	code execution. This is why buffers aren't great. You have to
+	essentially hard-code what your channel can handle and you don't
+	always know how many values you're going to push to the channel.
 	 */
 	c <- 42
 
