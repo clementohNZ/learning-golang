@@ -13,5 +13,7 @@ https://gobyexample.com/channel-directions
 Assigning general (bidirectional) channel type to a specific (directional) type:
 
 general -> specific ✅
+
 specific -> general ❌ because you lose some data
+
 specific -> specific ❌ they are different types
