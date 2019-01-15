@@ -1,5 +1,11 @@
-# Fan-In Pattern
-Fan-In is a concurrency design pattern.
+# Fan-Out, Fan-In
+This pattern is a combination of two individual patterns, namely **fan-out** and **fan-in**.
+
+## Fan-Out Pattern
+Fan-out is a term to describe the process of starting multiple goroutines to handle input from the pipeline
+
+## Fan-In Pattern
+Fan-in is a term to describe the process of combining multiple results into one channel
 
 In this way you are distributing the workload and collecting all the results when the work is completed.
 
@@ -33,14 +39,14 @@ func receive(e, o chan<- int, fi chan<- int) {
 
 This interconnected pattern will take quite some time to get used to.
 
-## Other Examples
+### Other Examples
 [Go Concurrency Patterns: Pipelines and cancellation](https://blog.golang.org/pipelines)
 
 [GO: A BETTER FAN-OUT, FAN-IN EXAMPLE](https://austburn.me/blog/a-better-fan-in-fan-out-example.html)
 
 [Concurrency Patterns: Golang](https://medium.com/@thejasbabu/concurrency-patterns-golang-5c5e1bcd0833)
 
-### Rob Pike's Example
+#### Rob Pike's Example
 This is the first time we see the double arrow syntax. You are receiving from the channel and immediately sending it
 to another channel.
 

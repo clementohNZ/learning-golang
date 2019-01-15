@@ -11,7 +11,7 @@ func main() {
 	fanin := make(chan int)
 
 	// send
-	go send(eve, odd)
+	go send(eve, odd) // fan-out
 
 	/*
 	receive
@@ -22,7 +22,7 @@ func main() {
 	do this to block the receiving of channel values so the program
 	won't exit before it has had enough time to complete.
 	 */
-	go receive(eve, odd, fanin)
+	go receive(eve, odd, fanin) // fan-out
 
 	for v := range fanin {
 		fmt.Printf("from fan in channel: %d", v)
@@ -51,14 +51,14 @@ func receive(e, o chan<- int, fi chan<- int) {
 
 	go func() {
 		for v := range e {
-			fi <- v
+			fi <- v // fan-in
 		}
 		wg.Done()
 	}()
 
 	go func() {
 		for v := range o {
-			fi <- v
+			fi <- v // fan-in
 		}
 		wg.Done()
 	}()
