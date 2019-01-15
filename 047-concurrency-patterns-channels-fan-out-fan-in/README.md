@@ -4,6 +4,24 @@ This pattern is a combination of two individual patterns, namely **fan-out** and
 ## Fan-Out Pattern
 Fan-out is a term to describe the process of starting multiple goroutines to handle input from the pipeline
 
+```go
+func main() {
+	eve := make(chan int)
+	odd := make(chan int)
+	fanin := make(chan int)
+
+	// send
+	go send(eve, odd) // fan-out
+	go receive(eve, odd, fanin) // fan-out
+
+	for v := range fanin {
+		fmt.Printf("from fan in channel: %d", v)
+	}
+
+	fmt.Println("about to exit")
+}
+```
+
 ## Fan-In Pattern
 Fan-in is a term to describe the process of combining multiple results into one channel
 
@@ -20,14 +38,14 @@ func receive(e, o chan<- int, fi chan<- int) {
 
 	go func() {
 		for even := range e {
-			fi <- even
+			fi <- even // fan-in
 		}
 		wg.Done()
 	}()
 
 	go func() {
 		for odd := range o {
-			fi <- odd
+			fi <- odd // fan-in
 		}
 		wg.Done()
 	}()
