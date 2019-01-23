@@ -17,6 +17,8 @@ func ExampleSum() {
 }
 ```
 
+Run `godoc -http=:8080` to see your documentation. Then find your package
+
 ![Example of generated document with example from test](./example-doc.png)
 
 More info and examples [here](https://blog.golang.org/examples)
