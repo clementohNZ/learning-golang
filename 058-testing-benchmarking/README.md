@@ -6,7 +6,7 @@ If you create a method starting with `Bench` in your `<file>_test.go` file you t
 benchmark the code inside.
 
 Then you can run the command `go test -bench .` to run all benchmarks
-or use a regex to run selected ones. Use `go test help` to find out more.
+or use a regex to run selected ones. Use `go help testflag` to find out more.
 
 **Example benchmark:**
 ```go
