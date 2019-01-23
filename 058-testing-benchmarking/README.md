@@ -34,3 +34,7 @@ code and it ran our code **20,000,000** times.
 
 This is such a cool feature to have out of the box! It can really help you write performant
 code using Big O.
+
+## Tips
+Look at the creators of go code to see what efficient code looks like. Try and write your own implementation
+and see how it compares.
