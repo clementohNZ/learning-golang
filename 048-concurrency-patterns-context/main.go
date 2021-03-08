@@ -36,7 +36,7 @@ func main() {
 	ctx, cancel := context.WithCancel(context.Background())
 
 	fmt.Println("error check 1:", ctx.Err())
-	fmt.Println("num gortins 1:", runtime.NumGoroutine())
+	fmt.Println("num go routines 1:", runtime.NumGoroutine())
 
 	go func() {
 		n := 0

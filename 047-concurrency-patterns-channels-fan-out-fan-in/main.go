@@ -25,7 +25,7 @@ func main() {
 	go receive(eve, odd, fanin) // fan-out
 
 	for v := range fanin {
-		fmt.Printf("from fan in channel: %d", v)
+		fmt.Printf("from fan in channel: %d\n", v)
 	}
 
 	fmt.Println("about to exit")
@@ -45,7 +45,7 @@ func send(e, o chan<- int) {
 }
 
 // receive channel
-func receive(e, o chan<- int, fi chan<- int) {
+func receive(e <-chan int, o <-chan int, fi chan<- int) {
 	var wg sync.WaitGroup
 	wg.Add(2)
 
